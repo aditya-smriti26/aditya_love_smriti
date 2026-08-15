@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#230018" />
+  <title>Aditya Loves Smirti — Our Story</title>
+
+  <!-- Romantic display fonts. Remove these links if you want the site fully offline. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="heartField" class="heart-field" aria-hidden="true"></div>
+  <div class="ambient-glow glow-one"></div>
+  <div class="ambient-glow glow-two"></div>
+
+  <main class="app-shell">
+    <!-- COVER -->
+    <section id="cover" class="screen cover-screen active" aria-label="Book cover">
+      <div class="cover-card">
+        <p class="cover-kicker">A story written by two hearts</p>
+
+        <h1>
+          <span>Aditya Loves</span>
+          <span>Smriti</span>
+        </h1>
+
+        <blockquote>
+          “Some stories are written with ink.<br />
+          Ours was written with moments.”
+        </blockquote>
+
+        <div class="hero-heart" aria-hidden="true">♥</div>
+
+        <div class="cover-author">
+          <strong>Written by Aditya</strong>
+          <span>2026</span>
+        </div>
+
+        <button id="openBookBtn" class="primary-btn" type="button">
+          <span>Open Book</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- BOOK -->
+    <section id="bookScreen" class="screen book-screen" aria-label="Love story book">
+      <header class="book-topbar">
+        <button id="homeBtn" class="icon-btn" type="button" title="Back to cover" aria-label="Back to cover">⌂</button>
+
+        <div class="book-title-small">
+          <span>Aditya</span>
+          <span class="mini-heart">♥</span>
+          <span>Smriti</span>
+        </div>
+
+        <div class="topbar-actions">
+          <button id="musicBtn" class="icon-btn" type="button" title="Music on or off" aria-label="Toggle music">♫</button>
+          <button id="contentsBtn" class="icon-btn" type="button" title="Table of contents" aria-label="Open table of contents">☰</button>
+        </div>
+      </header>
+
+      <div class="book-stage">
+        <article id="pageCard" class="page-card">
+          <div class="page-decoration top-left">♥</div>
+          <div class="page-decoration bottom-right">♥</div>
+
+          <div class="page-layout">
+            <section class="page-copy">
+              <p id="chapterLabel" class="chapter-label"></p>
+              <h2 id="pageTitle"></h2>
+              <div id="pageText" class="page-text"></div>
+              <p id="pageQuote" class="page-quote"></p>
+            </section>
+
+            <figure class="page-photo-wrap">
+              <img id="pagePhoto" class="page-photo" src="" alt="" />
+              <figcaption id="photoCaption"></figcaption>
+            </figure>
+          </div>
+
+          <footer class="page-footer">
+            <span class="footer-line"></span>
+            <span id="pageNumber">Page 1 of 25</span>
+            <span class="footer-line"></span>
+          </footer>
+        </article>
+      </div>
+
+      <nav class="book-controls" aria-label="Book navigation">
+        <button id="prevBtn" class="nav-btn" type="button">
+          <span aria-hidden="true">←</span>
+          <span>Previous</span>
+        </button>
+
+        <div class="progress-wrap" aria-label="Reading progress">
+          <div class="progress-track">
+            <div id="progressBar" class="progress-bar"></div>
+          </div>
+          <span id="progressText">1 / 25</span>
+        </div>
+
+        <button id="nextBtn" class="nav-btn" type="button">
+          <span>Next</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </nav>
+    </section>
+  </main>
+
+  <!-- TABLE OF CONTENTS -->
+  <aside id="contentsPanel" class="contents-panel" aria-hidden="true">
+    <div class="contents-backdrop" data-close-contents></div>
+    <div class="contents-card">
+      <div class="contents-header">
+        <div>
+          <p>Our journey</p>
+          <h2>Table of Contents</h2>
+        </div>
+        <button class="close-btn" type="button" data-close-contents aria-label="Close table of contents">×</button>
+      </div>
+      <div id="contentsList" class="contents-list"></div>
+    </div>
+  </aside>
+
+  <!-- FINAL PROPOSAL MODAL -->
+  <div id="proposalModal" class="proposal-modal" aria-hidden="true">
+    <div class="proposal-backdrop"></div>
+    <div class="proposal-card">
+      <p class="proposal-small">One final question...</p>
+      <h2>Smriti, will you be my forever?</h2>
+      <p>
+        I do not promise a perfect story. I promise a true one—full of laughter,
+        patience, support, adventure, and a love that keeps choosing you.
+      </p>
+      <div class="proposal-heart">♥</div>
+      <div class="proposal-actions">
+        <button id="yesBtn" class="primary-btn" type="button">Yes, forever ♥</button>
+        <button id="replayBtn" class="secondary-btn" type="button">Read again</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add your own music file and change the src below. -->
+  <audio id="bgMusic" loop preload="none">
+     <source src="assets/mere_nisha.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
